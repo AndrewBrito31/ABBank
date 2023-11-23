@@ -8,10 +8,4 @@ public class CurrentAccount extends Account {
 		this.balance = 0.0; //set the initial balance to zero
 	}
 	//only attributes from Account class
-    
-	// Implementation of the abstract method from the Account class
-    @Override
-    public void setBalance(double amount) {
-    	this.balance = amount;
-    }
 }
