@@ -1,17 +1,17 @@
-package components; // Exercise 1.1.1 - Creation of the Client class
+package components; // 1.1.1 - Creation of the Client class
 
 public class Client {
 	//Attributes (private)
 	private String firstName;
-	private String lastName;
+	private String name;
 	private int clientNumber;
-	private static int lastAssignedClientNumber = 1; // Static variable to track the last assigned client number
+	private static int lastAssignedClientNumber = 0; // Static variable to track the last assigned client number
 
 	
 	// Constructor for the Client class
-	public Client(String firstName, String lastName) {
+	public Client(String firstName, String name) {
 		this.firstName = firstName;
-		this.lastName = lastName;
+		this.name = name;
 		this.clientNumber = ++lastAssignedClientNumber;
 	}
 
@@ -24,12 +24,12 @@ public class Client {
 		this.firstName = firstName;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getName() {
+		return name;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLastName(String name) {
+		this.name = name;
 	}
 
 	public int getClientNumber() {
@@ -43,6 +43,6 @@ public class Client {
 	//toString() method to format the complete client information
 	@Override
 	public String toString() {
-		return "Client Number: " + clientNumber + ", Name: " + firstName + " " + lastName;
+		return "Client Number: " + clientNumber + ", Name: " + firstName + " " + name;
 	}
 }
