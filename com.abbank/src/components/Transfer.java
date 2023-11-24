@@ -10,4 +10,12 @@ public class Transfer extends Flow {
 		super(comment, identifier, amount, targetAccountNumber, effect, dateOfFlow);
 		this.issuingAccountNumber = issuingAccountNumber;
 	}
+	
+    @Override
+    public String toString() {
+        return "Transfer: " + getComment() + ", Amount: " + getAmount() +
+                ", Issuing Account: " + issuingAccountNumber +
+                ", Target Account: " + getTargetAccountNumber() +
+                ", Date: " + getDateOfFlow();
+    }
 }

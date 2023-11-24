@@ -8,4 +8,9 @@ public class Credit extends Flow {
 			int targetAccountNumber, boolean effect, LocalDateTime dateOfFlow) {
 		super(comment, identifier, amount, targetAccountNumber, effect, dateOfFlow);
 	}
+	
+	@Override
+	public String toString() {
+	    return "Credit: " + getComment() + ", Amount: " + getAmount() + ", Target Account: " + getTargetAccountNumber() + ", Date: " + getDateOfFlow();
+	}
 }
