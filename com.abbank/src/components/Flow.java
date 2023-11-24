@@ -11,7 +11,7 @@ public abstract class Flow {
 	private LocalDateTime dateOfFlow;
 
 	//Constructor
-	public Flow(String comment, int identifier, double amount, 
+	protected Flow(String comment, int identifier, double amount, 
 			int targetAccountNumber, boolean effect, LocalDateTime dateOfFlow) {
 		this.comment = comment;
 		this.identifier = identifier;

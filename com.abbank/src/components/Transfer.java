@@ -6,11 +6,14 @@ public class Transfer extends Flow {
 	private int issuingAccountNumber; //additional attribute for transfer
 	
 	public Transfer (String comment, int identifier, double amount, 
-			int targetAccountNumber, boolean effect, LocalDateTime dateOfFlow) {
+			int targetAccountNumber, boolean effect, int issuingAccountNumber, LocalDateTime dateOfFlow) {
 		super(comment, identifier, amount, targetAccountNumber, effect, dateOfFlow);
 		this.issuingAccountNumber = issuingAccountNumber;
 	}
 	
+	public int getIssuingAccountNumber() {
+		return issuingAccountNumber;
+	}
     @Override
     public String toString() {
         return "Transfer: " + getComment() + ", Amount: " + getAmount() +
