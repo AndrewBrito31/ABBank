@@ -1,0 +1,6 @@
+Account number: 1, Label: Savings, Balance: 1450.0, Client: Client Number: 1, Name: firstName1 name1
+Account number: 2, Label: Current, Balance: 150.5, Client: Client Number: 1, Name: firstName1 name1
+Account number: 3, Label: Savings, Balance: 1500.0, Client: Client Number: 2, Name: firstName2 name2
+Account number: 4, Label: Current, Balance: 100.5, Client: Client Number: 2, Name: firstName2 name2
+Account number: 5, Label: Savings, Balance: 1500.0, Client: Client Number: 3, Name: firstName3 name3
+Account number: 6, Label: Current, Balance: 100.5, Client: Client Number: 3, Name: firstName3 name3

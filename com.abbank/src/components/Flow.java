@@ -2,6 +2,8 @@ package components; // 1.3.2 Creation of the Flow class
 
 import java.time.LocalDateTime;
 
+import com.google.gson.Gson;
+
 public abstract class Flow {
 	private String comment;
 	private int identifier;
@@ -9,6 +11,8 @@ public abstract class Flow {
 	private int targetAccountNumber;
 	private boolean effect;
 	private LocalDateTime dateOfFlow;
+	
+	
 
 	//Constructor
 	protected Flow(String comment, int identifier, double amount, 
@@ -69,5 +73,4 @@ public abstract class Flow {
 	public void setDateOfFlow(LocalDateTime dateOfFlow) {
 		this.dateOfFlow = dateOfFlow;
 	}
-
 }

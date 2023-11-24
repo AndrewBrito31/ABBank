@@ -6,5 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/licen/Desktop/HN Institut - JAVA/EWJ7 - Full Stack Java Devops/8 - Java SE (EJAH)/JavaProject/gson-2.10.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,0 +1,27 @@
+[
+    {
+        "description": "Debit of 50€ from account n°1",
+        "amount": 50.0,
+        "targetAccountNumber": 1,
+        "isCompleted": false
+    },
+    {
+        "description": "Credit of 100.50€ on current account 2",
+        "amount": 100.5,
+        "targetAccountNumber": 2,
+        "isCompleted": true
+    },
+    {
+        "description": "Credit of 1500€ on savings account 1",
+        "amount": 1500.0,
+        "targetAccountNumber": 1,
+        "isCompleted": true
+    },
+    {
+        "description": "Transfer of 50€ from account n°1 to account n°2",
+        "amount": 50.0,
+        "issuingAccountNumber": 1,
+        "targetAccountNumber": 2,
+        "isCompleted": true
+    }
+]

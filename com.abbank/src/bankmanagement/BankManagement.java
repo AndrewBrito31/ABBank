@@ -1,9 +1,22 @@
 package bankmanagement; // 1.1.2 - Creation of main class for tests
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import components.Client;
 import components.Credit;
@@ -14,8 +27,8 @@ import components.SavingsAccount;
 import components.Transfer;
 import components.Account;
 
-public class BankManagement {
-	public static void main(String[] args) {
+public class BankManagement {	
+	public static void main(String[] args) {	
 		//Declare and array of clients
 		Client[] clientsArray;
 
@@ -39,6 +52,49 @@ public class BankManagement {
 		Account.updateAccountBalances(flows, accountsMap, accountsArray);
 		displayAccounts(accountsArray);
 
+		//2 - Use of the java.nio.file.Path interface and try with resources
+		// Path for the file
+		Path filePath = Paths.get("C:\\Users\\licen\\git\\abbankrepository\\com.abbank\\src\\account_data.txt");
+
+		try {
+			// Writing account information to the file
+			writeAccountInformation(filePath, accountsArray);
+			System.out.println("Account information written to file successfully!");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		//2.1 JSON file of flows
+		Path jsonFilePath = Paths.get("C:\\Users\\licen\\git\\abbankrepository\\com.abbank\\src\\flows_data.json");
+
+		try {
+			List<String> lines = Files.readAllLines(jsonFilePath);
+			String jsonContent = String.join("\n", lines);
+
+			// Print the JSON content to verify if it has been read
+			System.out.println("JSON Content:");
+			System.out.println(jsonContent);
+
+			// Gson code to deserialize JSON content into Flow objects
+			GsonBuilder gsonBuilder = new GsonBuilder();
+			gsonBuilder.registerTypeAdapter(Flow.class, new FlowDeserializer());
+			Gson gson = gsonBuilder.create();
+
+			Flow[] flowsFromJson = gson.fromJson(jsonContent, Flow[].class);
+
+			if (flowsFromJson != null) {
+				// Handle the obtained flows as needed
+				for (Flow flow : flowsFromJson) {
+					if (flow.getComment() != null) {
+						System.out.println(flow.getComment());
+					} 
+				}
+			} else {
+				System.out.println("Failed to load flows from JSON file.");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	//Method to generate clients based on the desired number
@@ -99,18 +155,18 @@ public class BankManagement {
 
 		// Generate Credit flows for all current accounts
 		for (Account account : accounts) {
-		    if (account instanceof CurrentAccount) {
-		        flows[flowIndex++] = new Credit("Credit of 100.50€ on current account " + account.getAccountNumber(),
-		                account.getAccountNumber(), 100.50, account.getAccountNumber(), true, adjustedDate);
-		    }
+			if (account instanceof CurrentAccount) {
+				flows[flowIndex++] = new Credit("Credit of 100.50€ on current account " + account.getAccountNumber(),
+						account.getAccountNumber(), 100.50, account.getAccountNumber(), true, adjustedDate);
+			}
 		}
 
 		// Generate Credit flows for all savings accounts
 		for (Account account : accounts) {
-		    if (account instanceof SavingsAccount) {
-		        flows[flowIndex++] = new Credit("Credit of 1500€ on savings account " + account.getAccountNumber(),
-		                account.getAccountNumber(), 1500.0, account.getAccountNumber(), true, adjustedDate);
-		    }
+			if (account instanceof SavingsAccount) {
+				flows[flowIndex++] = new Credit("Credit of 1500€ on savings account " + account.getAccountNumber(),
+						account.getAccountNumber(), 1500.0, account.getAccountNumber(), true, adjustedDate);
+			}
 		}
 
 
@@ -121,9 +177,9 @@ public class BankManagement {
 
 		// Displaying information about the created flows
 		for (Flow flow : flows) {
-		    if (flow != null) {
-		        System.out.println(flow);
-		    }
+			if (flow != null) {
+				System.out.println(flow);
+			}
 		}
 
 
@@ -160,6 +216,31 @@ public class BankManagement {
 		if (!foundNegativeBalance) {
 			System.out.println("All accounts have non-negative balances.");
 		}
+	}
+
+	//2 - Use of the java.nio.file.Path interface and try with resources
+	// Method to write account information to the file using try-with-resources
+	public static void writeAccountInformation(Path filePath, Account[] accounts) throws IOException {
+		try (BufferedWriter writer = Files.newBufferedWriter(filePath)) {
+			for (Account account : accounts) {
+				writer.write(account.toString());
+				writer.newLine();
+			}
+		}
+	}
+
+	//2.1 JSON file of flows    
+	public static Flow[] loadFlowsFromJson(Gson gson, String filePath) {
+		Flow[] flows = null;
+
+		try {
+			FileReader reader = new FileReader(filePath);
+			flows = gson.fromJson(reader, Flow[].class);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		return flows;
 	}
 
 }
