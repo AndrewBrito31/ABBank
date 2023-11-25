@@ -4,15 +4,26 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.function.Predicate;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "account")
 public abstract class Account {
 	// Attributes (protected)
 	protected String label;
+	@XmlElement(name = "accountBalance")
 	protected Double balance;
+	@XmlElement(name = "accountNumber")
 	protected int accountNumber;
 	protected Client client; 
 
 	private static int lastAssignedAccountNumber = 0; // Static variable to track the last assigned account number
 
+	
+    // No-arg constructor
+    public Account() {
+        // Default constructor
+    }
 	// Constructor for the Account class
 	protected Account(String label, Client client) {
 		this.label = label;

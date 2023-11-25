@@ -2,6 +2,7 @@ package bankmanagement; // 1.1.2 - Creation of main class for tests
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -14,6 +15,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -95,6 +101,11 @@ public class BankManagement {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		//2.2 XML file of account
+        //String xmlFilePath = "C:\\Users\\licen\\git\\abbankrepository\\com.abbank\\src\\accounts.xml";
+        //loadAccountsFromXML(xmlFilePath);
+	   
 	}
 
 	//Method to generate clients based on the desired number
@@ -242,5 +253,31 @@ public class BankManagement {
 
 		return flows;
 	}
+	
+	//2.2 XML file of account
+	public static void loadAccountsFromXML(String filePath) {
+        try {
+            File file = new File(filePath);
+            JAXBContext jaxbContext = JAXBContext.newInstance(AccountWrapper.class);
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 
+            // Unmarshal XML file and load accounts
+            AccountWrapper accountWrapper = (AccountWrapper) jaxbUnmarshaller.unmarshal(file);
+
+            // Get the list of accounts from AccountWrapper
+            if (accountWrapper != null) {
+                // Assuming getAccounts() returns a list of Account objects
+                List<Account> accountList = accountWrapper.getAccounts();
+
+                // Process each account
+                for (Account account : accountList) {
+                    System.out.println(account.toString()); // Display account details or perform operations
+                }
+            } else {
+                System.out.println("AccountWrapper object is null.");
+            }
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+    }
 }
