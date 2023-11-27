@@ -6,21 +6,21 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/licen/Desktop/HN Institut - JAVA/EWJ7 - Full Stack Java Devops/8 - Java SE (EJAH)/JavaProject/gson-2.10.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/licen/Desktop/HN Institut - JAVA/EWJ7 - Full Stack Java Devops/8 - Java SE (EJAH)/JavaProject/jaxb-ri-2.3.1/jaxb-ri/mod/jaxb-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/licen/Desktop/HN Institut - JAVA/EWJ7 - Full Stack Java Devops/8 - Java SE (EJAH)/JavaProject/jaxb-ri-2.3.1/jaxb-ri/mod/jaxb-jxc.jar"/>
-	<classpathentry kind="lib" path="C:/Users/licen/Desktop/HN Institut - JAVA/EWJ7 - Full Stack Java Devops/8 - Java SE (EJAH)/JavaProject/jaxb-ri-2.3.1/jaxb-ri/mod/jaxb-runtime.jar"/>
-	<classpathentry kind="lib" path="C:/Users/licen/Desktop/HN Institut - JAVA/EWJ7 - Full Stack Java Devops/8 - Java SE (EJAH)/JavaProject/jaxb-ri-2.3.1/jaxb-ri/mod/jaxb-xjc.jar"/>
-	<classpathentry kind="lib" path="C:/Users/licen/Desktop/HN Institut - JAVA/EWJ7 - Full Stack Java Devops/8 - Java SE (EJAH)/JavaProject/jaxb-ri-2.3.1/jaxb-ri/mod/codemodel.jar"/>
-	<classpathentry kind="lib" path="C:/Users/licen/Desktop/HN Institut - JAVA/EWJ7 - Full Stack Java Devops/8 - Java SE (EJAH)/JavaProject/jaxb-ri-2.3.1/jaxb-ri/mod/dtd-parser.jar"/>
-	<classpathentry kind="lib" path="C:/Users/licen/Desktop/HN Institut - JAVA/EWJ7 - Full Stack Java Devops/8 - Java SE (EJAH)/JavaProject/jaxb-ri-2.3.1/jaxb-ri/mod/FastInfoset.jar"/>
-	<classpathentry kind="lib" path="C:/Users/licen/Desktop/HN Institut - JAVA/EWJ7 - Full Stack Java Devops/8 - Java SE (EJAH)/JavaProject/jaxb-ri-2.3.1/jaxb-ri/mod/istack-commons-runtime.jar"/>
-	<classpathentry kind="lib" path="C:/Users/licen/Desktop/HN Institut - JAVA/EWJ7 - Full Stack Java Devops/8 - Java SE (EJAH)/JavaProject/jaxb-ri-2.3.1/jaxb-ri/mod/istack-commons-tools.jar"/>
-	<classpathentry kind="lib" path="C:/Users/licen/Desktop/HN Institut - JAVA/EWJ7 - Full Stack Java Devops/8 - Java SE (EJAH)/JavaProject/jaxb-ri-2.3.1/jaxb-ri/mod/javax.activation-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/licen/Desktop/HN Institut - JAVA/EWJ7 - Full Stack Java Devops/8 - Java SE (EJAH)/JavaProject/jaxb-ri-2.3.1/jaxb-ri/mod/relaxng-datatype.jar"/>
-	<classpathentry kind="lib" path="C:/Users/licen/Desktop/HN Institut - JAVA/EWJ7 - Full Stack Java Devops/8 - Java SE (EJAH)/JavaProject/jaxb-ri-2.3.1/jaxb-ri/mod/rngom.jar"/>
-	<classpathentry kind="lib" path="C:/Users/licen/Desktop/HN Institut - JAVA/EWJ7 - Full Stack Java Devops/8 - Java SE (EJAH)/JavaProject/jaxb-ri-2.3.1/jaxb-ri/mod/stax-ex.jar"/>
-	<classpathentry kind="lib" path="C:/Users/licen/Desktop/HN Institut - JAVA/EWJ7 - Full Stack Java Devops/8 - Java SE (EJAH)/JavaProject/jaxb-ri-2.3.1/jaxb-ri/mod/txw2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/licen/Desktop/HN Institut - JAVA/EWJ7 - Full Stack Java Devops/8 - Java SE (EJAH)/JavaProject/jaxb-ri-2.3.1/jaxb-ri/mod/xsom.jar"/>
+	<classpathentry kind="lib" path="lib/codemodel.jar"/>
+	<classpathentry kind="lib" path="lib/dtd-parser.jar"/>
+	<classpathentry kind="lib" path="lib/FastInfoset.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.10.1.jar"/>
+	<classpathentry kind="lib" path="lib/istack-commons-runtime.jar"/>
+	<classpathentry kind="lib" path="lib/istack-commons-tools.jar"/>
+	<classpathentry kind="lib" path="lib/javax.activation-api.jar"/>
+	<classpathentry kind="lib" path="lib/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="lib/jaxb-jxc.jar"/>
+	<classpathentry kind="lib" path="lib/jaxb-runtime.jar"/>
+	<classpathentry kind="lib" path="lib/jaxb-xjc.jar"/>
+	<classpathentry kind="lib" path="lib/relaxng-datatype.jar"/>
+	<classpathentry kind="lib" path="lib/rngom.jar"/>
+	<classpathentry kind="lib" path="lib/stax-ex.jar"/>
+	<classpathentry kind="lib" path="lib/txw2.jar"/>
+	<classpathentry kind="lib" path="lib/xsom.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

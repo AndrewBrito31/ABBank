@@ -1,0 +1,56 @@
+<accounts>
+    <account>
+        <accountNumber>1</accountNumber>
+        <label>Savings</label>
+        <balance>0.0</balance>
+        <client>
+            <clientNumber>1</clientNumber>
+            <name>firstName1 name1</name>
+        </client>
+    </account>
+    <account>
+        <accountNumber>2</accountNumber>
+        <label>Current</label>
+        <balance>0.0</balance>
+        <client>
+            <clientNumber>1</clientNumber>
+            <name>firstName1 name1</name>
+        </client>
+    </account>
+    <account>
+        <accountNumber>3</accountNumber>
+        <label>Savings</label>
+        <balance>0.0</balance>
+        <client>
+            <clientNumber>2</clientNumber>
+            <name>firstName2 name2</name>
+        </client>
+    </account>
+    <account>
+        <accountNumber>4</accountNumber>
+        <label>Current</label>
+        <balance>0.0</balance>
+        <client>
+            <clientNumber>2</clientNumber>
+            <name>firstName2 name2</name>
+        </client>
+    </account>
+    <account>
+        <accountNumber>5</accountNumber>
+        <label>Savings</label>
+        <balance>0.0</balance>
+        <client>
+            <clientNumber>3</clientNumber>
+            <name>firstName3 name3</name>
+        </client>
+    </account>
+    <account>
+        <accountNumber>6</accountNumber>
+        <label>Current</label>
+        <balance>0.0</balance>
+        <client>
+            <clientNumber>3</clientNumber>
+            <name>firstName3 name3</name>
+        </client>
+    </account>
+</accounts>
